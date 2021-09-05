@@ -1,12 +1,17 @@
 // Шапка - Навигация
-.site-nav,
 .site-nav__list {
     display: flex;
     align-items: center;
 }
 
 .site-nav__list {
-    margin-left: 93px;
+    @media screen and (max-width: $before-tablet) {
+        display: none;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-left: 93px;
+    }
 }
 
 .site-nav__item:not(:last-child) {

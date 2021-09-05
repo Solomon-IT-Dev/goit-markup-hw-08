@@ -1,27 +1,45 @@
 // Карточки портфолио
 .portfolio {
-    display: flex;
-    flex-wrap: wrap;
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 .portfolio__item {
-    flex-basis: calc((100% - #{$items-gap} * 2) / 3);
-    margin-right: $items-gap;
     margin-bottom: $items-gap;
 
     border: 1px solid #EEEEEE;
     overflow: hidden;
-
+    
     transition-property: box-shadow;
     transition-duration: 250ms;
     transition-timing-function: $timing-function;
 
-    &:nth-child(3n) {
-        margin-right: 0;
+    @media screen and (min-width: $tablet) and (max-width: $before-desktop) {
+        flex-basis: calc((100% - #{$items-gap}) / 2);
+        margin-right: $items-gap;
+    
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+        
+        &:nth-last-child(-n + 1) {
+            margin-bottom: 0;
+        }
     }
     
-    &:nth-last-child(-n + 3) {
-        margin-bottom: 0;
+    @media screen and (min-width: $desktop) {
+        flex-basis: calc((100% - #{$items-gap} * 2) / 3);
+        margin-right: $items-gap;
+    
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+        
+        &:nth-last-child(-n + 3) {
+            margin-bottom: 0;
+        }
     }
     
     &:hover,
@@ -39,7 +57,7 @@
     &::before {
         content: "";
         position: absolute;
-        bottom: 0;
+        bottom: -1px;
         transform: translateY(100%);
     
         width: 100%;
@@ -72,6 +90,10 @@
     transition-property: transform;
     transition-duration: 250ms;
     transition-timing-function: $timing-function;
+
+    @media screen and (max-width: $before-tablet) {
+        top: 53%;
+    }
     
     .portfolio__item:hover &,
     .portfolio__item:focus & {
@@ -89,6 +111,7 @@
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
+    text-align: start;
     text-transform: none;
 }
 

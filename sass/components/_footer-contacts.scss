@@ -1,4 +1,16 @@
 // Футер - Контакты
+.footer__contact-box {
+    @media screen and (max-width: $before-tablet) {
+        margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: $before-desktop) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .footer__contact-item:not(:last-child) {
     margin-bottom: 6px;
 }

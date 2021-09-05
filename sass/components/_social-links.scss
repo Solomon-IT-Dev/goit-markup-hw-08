@@ -1,9 +1,11 @@
 // Соцсети
 .social {
+    width: 206px;
+
     display: flex;
     justify-content: space-between;
-    margin-left: 32px;
-    margin-right: 32px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .social__link {

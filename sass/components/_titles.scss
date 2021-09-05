@@ -1,14 +1,20 @@
 // Текстовая часть - Заголовки
 .section__title {
     margin-top: 0;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 
     font-weight: 700;
-    font-size: 36px;
+    font-size: 28px;
     line-height: 1.17;
     text-align: center;
 
     color: $title-text-color;
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 50px;
+
+        font-size: 36px;
+    }
 }
 
 .title {
@@ -18,7 +24,12 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
+    text-align: center;
     text-transform: uppercase;
 
     color: $title-text-color;
+
+    @media screen and (min-width: $tablet) {
+        text-align: start;
+    }
 }

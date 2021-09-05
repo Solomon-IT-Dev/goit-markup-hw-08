@@ -85,6 +85,13 @@
     }
 }
 
+// Кнопка подписки
+.subscription-box__button {
+    margin: 0;
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
 // Кнопка закрытия модального окна
 .modal__button--close {
     position: absolute;
@@ -133,9 +140,54 @@
     padding-right: 55px;
 }
 
-// Кнопка подписки
-.subscription-box__button {
+// Кнопка мобильного меню навигации
+.mobile-menu__button {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin-left: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+    color: $black-color;
+    cursor: pointer;
+
+    transform: scale(1);
+    transition-property: color, transform;
+    transition-duration: 250ms;
+    transition-timing-function: $timing-function;
+
+    &:hover,
+    &:focus {
+        color: $additional-color;
+        transform: scale(1.2);
+    }
+
+    &:active {
+        color: $additional-color;
+        transform: scale(0.9);
+    }
+
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+}
+
+.mobile-menu__button--close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
     margin: 0;
-    padding-left: 28px;
-    padding-right: 28px;
+}
+
+.mobile-menu__icon {
+    fill: currentColor;
 }

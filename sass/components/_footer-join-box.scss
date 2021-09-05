@@ -2,11 +2,25 @@
 .join-box {
     width: 206px;
 
-    margin-left: 85px;
+    @media screen and (max-width: $before-tablet) {
+        margin-bottom: 60px;
+    }
+
+    @media screen and (min-width: $tablet) and (max-width: $before-desktop) {
+        margin-top: 5px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-left: 85px;
+    }
 }
 
 .join-box__title {
     margin-bottom: 20px;
 
     color: $white-color;
+
+    @media screen and (max-width: $before-desktop) {
+        text-align: center;
+    }
 }

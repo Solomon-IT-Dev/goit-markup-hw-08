@@ -8,10 +8,14 @@
     margin-bottom: 12px;
     font-weight: 700;
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.5;
     text-align: center;
 
     color: $title-text-color;
+
+    @media screen and (min-width: $desktop) {
+        line-height: 1.15;
+    }
 }
 
 .form__field {
@@ -31,8 +35,8 @@
 .form__input {
     margin: 0;
     padding: 12px 42px;
-    font-size: 12px;
-    line-height: 1.17;
+    font-size: 14px;
+    line-height: 1.14;
     letter-spacing: 0.01em;
 
     border-radius: 4px;
@@ -41,6 +45,11 @@
     transition-property: border;
     transition-duration: 250ms;
     transition-timing-function: $timing-function;
+
+    @media screen and (min-width: $desktop) {
+        font-size: 12px;
+        line-height: 1.17;
+    }
     
     &:focus {
         border: 1px solid $additional-color;
@@ -102,6 +111,9 @@
     height: 15px;
 
     background-image: url(../images/icon-unchecked.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 
     transition-property: background-image;
     transition-duration: 250ms;
@@ -118,6 +130,11 @@
 
 .form__checkbox-label {
     margin-left: 8px;
+
+    @media screen and (max-width: $before-desktop) {
+        font-size: 12px;
+        line-height: 1.17;
+    }
 }
 
 .form__agreement {

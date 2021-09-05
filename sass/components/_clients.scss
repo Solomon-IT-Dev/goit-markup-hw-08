@@ -1,15 +1,57 @@
 // Клиенты
 .clients {
-    display: flex;
-    justify-content: space-around;
+    @media screen and (max-width: $before-desktop) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        justify-content: space-around;
+    }
 }
 
-.clients__item:not(:last-child) {
-    margin-right: $items-gap;
+.clients__item {
+    @media screen and (max-width: $before-tablet) {
+        width: calc((100% - #{$items-gap}) / 2);
+
+        margin-bottom: $items-gap;
+
+        &:nth-child(2n - 1) {
+            margin-right: $items-gap;
+        }
+
+        &:nth-last-child(-n + 2) {
+            margin-bottom: 0;
+        }
+    }
+
+    @media screen and (min-width: $tablet) and (max-width: $before-desktop) {
+        width: calc((100% - #{$items-gap} * 2) / 3);
+
+        margin-right: $items-gap;
+        margin-bottom: $items-gap;
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        &:nth-last-child(-n + 3) {
+            margin-bottom: 0;
+        }
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: calc((100% - #{$items-gap} * 5) / 6);
+    
+        &:not(:last-child) {
+            margin-right: $items-gap;
+        }
+    }
 }
 
 .clients__link {
-    width: 170px;
+    width: 100%;
     height: 92px;
 
     display: flex;
@@ -29,7 +71,7 @@
     &:focus {
         color: $additional-color;
         border-color: $additional-color;
-        transform: scale(1.2);
+        transform: scale(1.11);
     }
 }
 

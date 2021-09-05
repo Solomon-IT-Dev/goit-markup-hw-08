@@ -1,4 +1,10 @@
 // Специализация студии
+.section--desktop-only {
+    @media screen and (max-width: $before-desktop) {
+        display: none;
+    }
+}
+
 .gallery {
     display: flex;
     justify-content: space-around;

@@ -1,25 +1,57 @@
 // Шапка - Контакты
 .header__contact-list {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
+    @media screen and (max-width: $before-tablet) {
+        display: none;
+    }
+
+    @media screen and (min-width: $tablet) {
+        display: flex;
+    }
+    
+    @media screen and (max-width: $before-desktop) {
+        flex-direction: column;
+
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+    
+    @media screen and (min-width: $desktop) {
+        align-items: center;
+        margin-left: auto;
+    }
 }
 
-.header__contact-item:not(:last-child) {
-    margin-right: 50px;
+.header__contact-item {
+    @media screen and (min-width: $tablet) {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        padding-top: 32px;
+        padding-bottom: 32px;
+
+        &:not(:last-child) {
+            margin-right: 50px;
+        }
+    }
 }
+
 
 .header__contact-link {
     display: flex;
     align-items: center;
-    padding-top: 32px;
-    padding-bottom: 32px;
 
     color: $primary-text-color;
 
     transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: $timing-function;
+
+    @media screen and (max-width: $before-desktop) {
+        font-size: 12px;
+        line-height: 1.16;
+    }
     
     &:hover,
     &:focus {
@@ -28,7 +60,27 @@
 }
 
 .header__contact-icon {
-    margin-right: 10px;
+    @media screen and (min-width: $tablet) {
+        margin-right: 8px;
+    
+        fill: currentColor;
+    }
 
-    fill: currentColor;
+    @media screen and (min-width: $desktop) {
+        margin-right: 10px;
+    }
+}
+
+.tablet-icon-mail {
+    @media screen and (max-width: $before-desktop) {
+        width: 14px;
+        height: 10px;
+    }
+}
+
+.tablet-icon-phone {
+    @media screen and (max-width: $before-desktop) {
+        width: 10px;
+        height: 14px;
+    }
 }
